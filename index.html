@@ -1,66 +1,182 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#fff6f9">
-<meta name="description" content="XOLO — a space for gay men to connect, chat and build meaningful connections. 18+ only.">
-<title>XOLO — Find Your Connection</title>
-<style>
-:root{--bg:#fff6f9;--ink:#292333;--muted:#756d7b;--pink:#e94f87;--pink2:#f47ca4;--lav:#8065bd;--line:#f1d7e1;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(ellipse at 12% 0%,#f7dce8 0,transparent 38%),radial-gradient(ellipse at 95% 35%,#eee5fb 0,transparent 34%),var(--bg)}
-a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
-header{padding:22px 0;border-bottom:1px solid #f1d7e1aa;background:#fff9fcbb;backdrop-filter:blur(12px)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-size:28px;letter-spacing:.22em;font-weight:850}.brand span{background:linear-gradient(90deg,var(--pink),var(--lav));-webkit-background-clip:text;background-clip:text;color:transparent}
-.links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a:hover{color:var(--pink)}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:38px;padding:76px 0 68px;min-height:570px}
-.eyebrow{display:inline-flex;padding:7px 13px;border:1px solid #edbfd0;border-radius:99px;color:#a94c78;background:#fff8fb;font-size:12px;font-weight:750;letter-spacing:.1em}
-h1{font-size:clamp(42px,6.2vw,70px);line-height:1.06;letter-spacing:-.045em;margin:20px 0 18px}
-h1 em{font-style:normal;color:var(--pink)}
-.lead{font-size:19px;color:var(--muted);max-width:560px}
-.actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;justify-content:center;align-items:center;padding:14px 25px;border-radius:999px;font-weight:750;box-shadow:0 8px 22px #e94f8733;transition:.2s}
-.btn.primary{background:linear-gradient(110deg,#f17da4,#df427d);color:white}.btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px #e94f8744}
-.btn.secondary{background:#fff;border:1px solid var(--line);color:var(--lav);box-shadow:none}
-.note{font-size:13px;color:var(--muted);margin-top:13px}
-.visual{min-height:390px;border:1px solid #edcbd9;border-radius:34px;background:linear-gradient(145deg,#ffe9f0,#f5eaff);box-shadow:0 18px 45px #8f617026;display:grid;place-items:center;position:relative;overflow:hidden}
-.visual:before,.visual:after{content:"";position:absolute;border-radius:50%;background:#fff9;filter:blur(1px)}
-.visual:before{width:220px;height:220px;top:-75px;right:-55px}.visual:after{width:170px;height:170px;bottom:-65px;left:-45px}
-.art{position:relative;z-index:1;text-align:center;padding:30px}
-.orbit{font-size:74px;line-height:1.3;filter:drop-shadow(0 10px 14px #c57caa44)}
-.art strong{display:block;font-size:24px;margin-top:12px}.art small{color:var(--muted)}
-section{padding:48px 0}.section-title{text-align:center;font-size:32px;letter-spacing:-.03em;margin:0 0 10px}.section-sub{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:620px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#ffffffd9;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 9px 28px #8f617012}
-.card .ico{font-size:27px}.card h3{margin:12px 0 6px}.card p{color:var(--muted);margin:0}
-.safety{background:linear-gradient(120deg,#fff,#fff0f5);border:1px solid var(--line);border-radius:28px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.safety p{color:var(--muted);margin:5px 0 0;max-width:650px}
-footer{margin-top:42px;padding:30px 0 38px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:18px;flex-wrap:wrap}.foot a:hover{color:var(--pink)}
-@media(max-width:760px){.links{gap:12px;font-size:13px}.hero{grid-template-columns:1fr;padding:54px 0 35px;gap:28px}.visual{min-height:260px}.cards{grid-template-columns:1fr}.safety{display:block}.safety .btn{margin-top:18px}}
-@media(max-width:430px){.links a:nth-child(2){display:none}.brand{font-size:24px}h1{font-size:46px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff6f9">
+  <meta name="description" content="XOLO is a space for gay men to connect, chat and discover meaningful connections. Adults 18+ only.">
+  <title>XOLO — Find Your Connection</title>
+  <style>
+    :root {
+      --bg:#fff7fa; --ink:#292333; --muted:#756d7b; --pink:#e94f87;
+      --pink2:#f47ca4; --lav:#8065bd; --line:#f0d8e2; --white:#fff;
+      --shadow:0 18px 48px rgba(133,79,111,.12);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:
+      radial-gradient(ellipse at 8% 0%,rgba(246,204,222,.62),transparent 34%),
+      radial-gradient(ellipse at 100% 30%,rgba(224,214,247,.58),transparent 32%),
+      var(--bg);color:var(--ink);
+      font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,250,252,.88);
+      border-bottom:1px solid rgba(240,216,226,.8);backdrop-filter:blur(16px)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-size:27px;font-weight:850;letter-spacing:.24em;
+      background:linear-gradient(100deg,var(--pink),var(--lav));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .navlinks{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:14px;font-weight:600}
+    .navlinks a:hover{color:var(--pink)}
+    .nav-cta{padding:10px 18px;border-radius:99px;background:var(--pink);color:#fff}
+    .hero{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;gap:48px;padding:78px 0 68px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid #edc5d5;
+      border-radius:99px;background:#fff9fc;color:#a34c76;font-size:12px;font-weight:800;letter-spacing:.11em}
+    h1{font-size:clamp(46px,6.5vw,76px);line-height:1.03;letter-spacing:-.055em;margin:22px 0 20px}
+    h1 span{background:linear-gradient(100deg,#e94f87,#b66ba8,#8065bd);
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{max-width:570px;color:var(--muted);font-size:19px;line-height:1.7;margin:0}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:14px 23px;
+      border-radius:99px;font-weight:750;transition:transform .18s,box-shadow .18s}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{color:white;background:linear-gradient(110deg,#f17da4,#df427d);
+      box-shadow:0 10px 24px rgba(233,79,135,.25)}
+    .secondary{background:#fff;color:var(--lav);border:1px solid var(--line)}
+    .micro{font-size:13px;color:var(--muted);margin:14px 0 0}
+    .hero-art{min-height:430px;border:1px solid #edcbd9;border-radius:36px;
+      background:linear-gradient(145deg,#ffeaf1 0%,#f8e8f4 52%,#eee9ff 100%);
+      box-shadow:var(--shadow);position:relative;overflow:hidden;display:grid;place-items:center}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.52)}
+    .hero-art:before{width:260px;height:260px;right:-85px;top:-90px}
+    .hero-art:after{width:210px;height:210px;left:-70px;bottom:-90px}
+    .art-inner{position:relative;z-index:1;text-align:center;padding:30px}
+    .hearts{font-size:72px;line-height:1.3;filter:drop-shadow(0 9px 15px rgba(181,105,153,.18))}
+    .art-inner h2{font-size:25px;line-height:1.25;margin:18px 0 8px}
+    .art-inner p{color:var(--muted);margin:0}
+    .trustline{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;padding:18px 0 30px;
+      color:var(--muted);font-size:13px;border-top:1px solid rgba(240,216,226,.8);border-bottom:1px solid rgba(240,216,226,.8)}
+    .trustline span{display:flex;align-items:center;gap:8px}
+    section.content{padding:66px 0}
+    .section-head{text-align:center;max-width:670px;margin:0 auto 32px}
+    .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--pink);text-transform:uppercase}
+    .section-head h2{font-size:clamp(30px,4vw,42px);line-height:1.15;letter-spacing:-.035em;margin:9px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:27px;border-radius:24px;background:rgba(255,255,255,.88);border:1px solid var(--line);box-shadow:0 10px 30px rgba(133,79,111,.07)}
+    .icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
+      background:linear-gradient(140deg,#ffe2ec,#eee7ff);font-size:23px}
+    .card h3{margin:16px 0 7px;font-size:19px}
+    .card p{margin:0;color:var(--muted);font-size:15px}
+    .download-panel{display:flex;align-items:center;justify-content:space-between;gap:28px;
+      padding:34px;border-radius:28px;background:linear-gradient(115deg,#fff 0%,#fff0f5 62%,#f1ebff 100%);
+      border:1px solid var(--line);box-shadow:var(--shadow)}
+    .download-panel h2{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.03em}
+    .download-panel p{color:var(--muted);margin:0;max-width:650px}
+    footer{margin-top:30px;border-top:1px solid var(--line);padding:27px 0 34px;color:var(--muted);font-size:13px}
+    .foot{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .foot strong{color:var(--ink);letter-spacing:.16em}
+    @media(max-width:780px){
+      .hero{grid-template-columns:1fr;padding:55px 0 42px;gap:28px}
+      .hero-art{min-height:280px}
+      .cards{grid-template-columns:1fr}
+      .download-panel{display:block;padding:27px}
+      .download-panel .btn{margin-top:20px}
+    }
+    @media(max-width:480px){
+      .wrap{width:min(100% - 30px,1120px)}
+      .nav{height:68px}.navlinks{gap:13px;font-size:12px}.navlinks a:not(.nav-cta){display:none}
+      .logo{font-size:24px}h1{font-size:49px}.intro{font-size:17px}
+      .trustline{gap:12px;justify-content:flex-start}
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#"><span>XOLO</span></a><nav class="links"><a href="#about">About</a><a href="#safety">Safety</a><a href="xolo_legal_support_website_light_theme.html">Legal &amp; Support</a></nav></div></header>
-<main class="wrap">
-<section class="hero" id="about">
-<div><span class="eyebrow">A SPACE FOR GAY MEN · 18+ ONLY</span>
-<h1>Find your<br><em>connection.</em></h1>
-<p class="lead">Meet people, start conversations and discover meaningful connections with XOLO — a welcoming space designed for gay men.</p>
-<div class="actions"><a class="btn primary" href="https://github.com/ashu7452901/Xolo/releases/download/v1.0.0/app-release.apk" id="download">Download XOLO</a><a class="btn secondary" href="#safety">Explore XOLO</a></div>
-<p class="note">Android app · Adults 18 and above only</p>
-</div>
-<div class="visual" aria-label="XOLO brand artwork"><div class="art"><div class="orbit">💗 ✨ 💜</div><strong>Your next connection starts here.</strong><small>Connect · Chat · Discover</small></div></div>
-</section>
-<section><h2 class="section-title">A better way to connect</h2><p class="section-sub">A simple place to meet people and make space for genuine conversations.</p>
-<div class="cards">
-<article class="card"><div class="ico">💬</div><h3>Start conversations</h3><p>Connect through chats and get to know people at your own pace.</p></article>
-<article class="card"><div class="ico">💗</div><h3>Find your people</h3><p>Discover a community where you can express yourself and connect.</p></article>
-<article class="card"><div class="ico">🛡️</div><h3>Respect matters</h3><p>Help keep the community welcoming by treating others with care.</p></article>
-</div></section>
-<section id="safety"><div class="safety"><div><h2 style="margin:0">Your comfort matters.</h2><p>XOLO is intended for adults aged 18+. Please respect boundaries, protect personal information and report behaviour that makes you feel unsafe. Read the Community Guidelines and Privacy Policy before using the app.</p></div><a class="btn secondary" href="xolo_legal_support_website_light_theme.html">Safety &amp; legal information</a></div></section>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="XOLO home">XOLO</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#features">Discover</a>
+      <a href="#safety">Community</a>
+      <a class="nav-cta" href="https://github.com/ashu7452901/Xolo/releases/download/v1.0.0/app-release.apk">Download App</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero" id="about">
+      <div>
+        <span class="eyebrow">MADE FOR GAY MEN · 18+ ONLY</span>
+        <h1>Make room for<br><span>real connection.</span></h1>
+        <p class="intro">XOLO is a space for gay men to meet, chat and discover meaningful connections — at their own pace.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/ashu7452901/Xolo/releases/download/v1.0.0/app-release.apk">↓ &nbsp; Download XOLO</a>
+          <a class="btn secondary" href="#features">Discover XOLO</a>
+        </div>
+        <p class="micro">Android app · Adults aged 18 and above only</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="XOLO pink and lavender connection-themed artwork">
+        <div class="art-inner">
+          <div class="hearts">💗 ✨ 💜</div>
+          <h2>Your space.<br>Your people. Your connection.</h2>
+          <p>Connect · Chat · Discover</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="trustline">
+      <span>♡ A community for gay men</span>
+      <span>✦ Conversations at your pace</span>
+      <span>18+ Adults only</span>
+    </div>
+
+    <section class="content" id="features">
+      <div class="section-head">
+        <span class="kicker">The XOLO experience</span>
+        <h2>Connection starts with a conversation.</h2>
+        <p>Get to know people, share a conversation and explore new connections in one dedicated space.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">💬</div>
+          <h3>Meet &amp; connect</h3>
+          <p>Discover people and make space for new connections.</p>
+        </article>
+        <article class="card">
+          <div class="icon">💗</div>
+          <h3>Chat your way</h3>
+          <p>Start conversations and get to know someone at your own pace.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✨</div>
+          <h3>Be yourself</h3>
+          <p>A space created for gay men to connect and express themselves.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content" id="safety" style="padding-top:0">
+      <div class="download-panel">
+        <div>
+          <span class="kicker">Ready to meet your people?</span>
+          <h2>Take the next step with XOLO.</h2>
+          <p>Download the Android app and start exploring. XOLO is intended for adults aged 18 and above.</p>
+        </div>
+        <a class="btn primary" href="https://github.com/ashu7452901/Xolo/releases/download/v1.0.0/app-release.apk">Download XOLO&nbsp; ↓</a>
+      </div>
+    </section>
+  </div>
 </main>
-<footer><div class="wrap foot"><div>© 2026 XOLO. For adults 18+.</div><div class="footlinks"><a href="xolo_legal_support_website_light_theme.html">Terms &amp; Conditions</a><a href="xolo_legal_support_website_light_theme.html">Privacy Policy</a><a href="xolo_legal_support_website_light_theme.html">Community Guidelines</a><a href="xolo_legal_support_website_light_theme.html">Support &amp; Account Deletion</a></div></div></footer>
-</body></html>
+
+<footer>
+  <div class="wrap foot">
+    <strong>XOLO</strong>
+    <span>Made for connection. Adults 18+ only.</span>
+    <span>© 2026 XOLO. All rights reserved.</span>
+  </div>
+</footer>
+</body>
+</html>
